@@ -9,7 +9,7 @@ import os
 # Define username and password for SendGrid API
 user_name = "apikey"
 pw = os.environ["API_KEY"]
-email_address = "stephenlemasney@gmail.com"
+email_address = os.environ["email_address"]
 
 # creates SMTP session
 # start TLS for security
