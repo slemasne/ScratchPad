@@ -1,6 +1,9 @@
 import os
 import sys
+import pandas as pd
 
 print(sys.executable)
 
-print(os.environ["test_variable"])
+transactions = pd.read_csv("files/transactions.csv")
+
+print(transactions)
