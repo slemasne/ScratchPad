@@ -1,3 +1,6 @@
 import os
+import sys
 
-print(os.environ)
+print(sys.executable)
+
+print(os.environ["test_variable"])
