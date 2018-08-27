@@ -10,7 +10,7 @@ import os
 
 # Define username and password for SendGrid API
 user_name = "apikey"
-#pw = os.environ["API_KEY"]
+pw = os.environ["API_KEY"]
 #email_address = os.environ["email_address"]
 email_address = "stephenlemasney@gmail.com"
 filename = "transactions.csv"
@@ -36,13 +36,11 @@ msg['Subject'] = "Python Email Update"
 msg.attach(MIMEText(html_string, 'html'))
 
 # Create attachment
-
 attachment = open(file_path, "rb")
 part = MIMEBase('application', 'octet-stream')
 part.set_payload((attachment).read())
 encoders.encode_base64(part)
 part.add_header('Content-Disposition', "attachment; filename= %s" % filename)
-
 msg.attach(part)
 
 # Login and send email
